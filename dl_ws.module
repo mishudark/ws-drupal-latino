@@ -29,6 +29,13 @@ function can_ws_payment(){
 
 function ws_payment($token){
   $items = array();
+  $valid = array(
+    'canceled',
+    'in_checkout',
+    'post_checkout',
+    'completed',
+    'payment_received',
+  );
   $valid = array('payment_received','completed');
   if(!in_array($token,$valid)) return;
 
@@ -41,5 +48,5 @@ function ws_payment($token){
   while($r = db_fetch_object($query)){
     $items[] = $r->mail;
   }
-  return (object)$items;
+  return $items;
 }
