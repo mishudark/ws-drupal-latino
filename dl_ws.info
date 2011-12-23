@@ -1,5 +1,0 @@
-name = "ws drupal latino"
-description = "WS Drupal latino"
-core = "6.x"
-package = "Drupal latino"
-dependencies[] = services
